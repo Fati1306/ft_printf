@@ -6,7 +6,7 @@
 /*   By: fel-maac <fel-maac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 08:06:04 by fel-maac          #+#    #+#             */
-/*   Updated: 2021/11/21 12:04:11 by fel-maac         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:07:30 by fel-maac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ static void	check_format(const char *format, va_list p, int *printed, int i)
 				check_hex(format[i], p, printed);
 			else if (format[i] == '%')
 				ft_putchar('%', printed);
-			else
+			else if (format[i] == '\0')
 				return ;
+			else
+				ft_putchar(format[i], printed);
 		}
 		else
 			ft_putchar(format[i], printed);
